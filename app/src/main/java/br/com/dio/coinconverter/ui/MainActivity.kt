@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         binding.btnConverter.setOnClickListener {
 
             it.hideSoftKeyboard()
-            val search = "${binding.tilFrom.text} ${binding.tilTo.text}"
+            val search = "${binding.tilFrom.text}-${binding.tilTo.text}"
             viewModel.getExchangeValue(search)
         }
 
