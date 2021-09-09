@@ -6,6 +6,7 @@ import retrofit2.http.Path
 
 interface AwesomeService {
 
-    @GET("json/last/{coins}")
+    @GET("/json/last/{coins}")
     suspend fun exchangeValue(@Path("coins") coins: String): ExchangeResponse
+
 }

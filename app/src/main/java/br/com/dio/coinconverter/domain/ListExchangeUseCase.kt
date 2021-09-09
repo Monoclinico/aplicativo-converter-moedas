@@ -5,12 +5,11 @@ import br.com.dio.coinconverter.data.model.ExchangeResponseValue
 import br.com.dio.coinconverter.data.repository.CoinRepository
 import kotlinx.coroutines.flow.Flow
 
-class GetExchangeValueUseCase(
+class ListExchangeUseCase(
     private val repository: CoinRepository
-) : UseCase<String, ExchangeResponseValue>() {
+) : UseCase.NoParam<List<ExchangeResponseValue>>() {
 
-    override suspend fun execute(param: String): Flow<ExchangeResponseValue> {
-        return repository.getExchangeValue(param)
+    override suspend fun execute(): Flow<List<ExchangeResponseValue>> {
+        return repository.list()
     }
-
 }
